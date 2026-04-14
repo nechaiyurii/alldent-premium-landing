@@ -1,0 +1,1300 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>AllDent | Премиальная стоматология семьи Кашевич в Минске</title>
+    <meta name="description" content="Стоматология AllDent: искусство здоровой улыбки. 23+ года опыта, передовые технологии лечения и эстетической реставрации зубов в Минске. Безупречное качество и 100% безопасность.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Manrope:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Colors */
+            --color-bg: #FFFFFF;
+            --color-bg-alt: #F8F9FA;
+            --color-primary: #0A4D68; /* Deep Teal */
+            --color-primary-light: #166e92;
+            --color-accent: #D4AF37; /* Warm Gold */
+            --color-accent-hover: #b8952b;
+            --color-text-main: #1E232A; /* Graphite */
+            --color-text-muted: #5d6670;
+            --color-white: #FFFFFF;
+            
+            /* Typography */
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'Manrope', sans-serif;
+            
+            /* Spacing */
+            --space-xs: 0.5rem;
+            --space-sm: 1rem;
+            --space-md: 2rem;
+            --space-lg: 4rem;
+            --space-xl: 8rem;
+            
+            /* Borders & Shadows */
+            --radius-sm: 4px;
+            --radius-md: 12px;
+            --radius-lg: 24px;
+            --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 10px 40px rgba(10, 77, 104, 0.08);
+            
+            /* Transitions */
+            --transition-smooth: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        /* Reset & Base */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--color-bg);
+            color: var(--color-text-main);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            line-height: 1.1;
+            color: var(--color-primary);
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* Layout */
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .section {
+            padding: var(--space-xl) 0;
+        }
+        
+        .section-light {
+            background-color: var(--color-bg-alt);
+        }
+
+        /* Typography Utilities */
+        .text-center { text-align: center; }
+        .text-accent { color: var(--color-accent); }
+        .text-muted { color: var(--color-text-muted); }
+        
+        .section-title {
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            margin-bottom: var(--space-sm);
+        }
+        
+        .section-subtitle {
+            font-size: 1.125rem;
+            color: var(--color-text-muted);
+            max-width: 600px;
+            margin: 0 auto var(--space-lg);
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 1rem 2rem;
+            font-family: var(--font-body);
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-radius: var(--radius-sm);
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            border: none;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn-primary {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--color-primary-light);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(10, 77, 104, 0.2);
+        }
+
+        .btn-accent {
+            background-color: var(--color-accent);
+            color: var(--color-white);
+        }
+
+        .btn-accent:hover {
+            background-color: var(--color-accent-hover);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            border: 1px solid var(--color-white);
+            color: var(--color-white);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--color-white);
+            color: var(--color-primary);
+        }
+
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            padding: 1rem 0;
+            transition: var(--transition-smooth);
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .header.scrolled {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 0.75rem 0;
+            box-shadow: var(--shadow-sm);
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+
+        .header.scrolled .logo { color: var(--color-primary); }
+        .header.scrolled .nav-link { color: var(--color-text-main); }
+        .header.scrolled .btn-outline { 
+            border-color: var(--color-primary); 
+            color: var(--color-primary); 
+        }
+        .header.scrolled .btn-outline:hover {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+        .header.scrolled .burger-line { background-color: var(--color-primary); }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: var(--color-white);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            transition: var(--transition-smooth);
+        }
+
+        .logo span {
+            color: var(--color-accent);
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 2.5rem;
+            align-items: center;
+        }
+
+        .nav-link {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: var(--color-white);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 1px;
+            background-color: var(--color-accent);
+            transition: width 0.3s ease;
+        }
+
+        .nav-link:hover::after {
+            width: 100%;
+        }
+
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.5rem;
+        }
+        
+        .header-phone {
+            font-weight: 600;
+            color: var(--color-white);
+            transition: var(--transition-smooth);
+            display: none;
+        }
+        
+        .header.scrolled .header-phone {
+            color: var(--color-primary);
+        }
+
+        .burger {
+            display: none;
+            cursor: pointer;
+            z-index: 1001;
+        }
+
+        .burger-line {
+            width: 24px;
+            height: 2px;
+            background-color: var(--color-white);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding-top: 80px;
+            background-color: var(--color-primary);
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+            z-index: 1;
+        }
+        
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to right, rgba(10, 77, 104, 0.9) 0%, rgba(10, 77, 104, 0.4) 100%);
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 3;
+            max-width: 800px;
+            color: var(--color-white);
+        }
+
+        .hero-tag {
+            display: inline-block;
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--color-accent);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            position: relative;
+            padding-left: 40px;
+        }
+        
+        .hero-tag::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 30px;
+            height: 1px;
+            background-color: var(--color-accent);
+        }
+
+        .hero-title {
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            color: var(--color-white);
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero-desc {
+            font-size: 1.125rem;
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 2.5rem;
+            max-width: 600px;
+            line-height: 1.8;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+
+        /* Stats/Philosophy */
+        .stats {
+            background-color: var(--color-white);
+            transform: translateY(-50%);
+            position: relative;
+            z-index: 10;
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-md);
+            padding: 3rem 4rem;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .stat-item {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+        }
+
+        .stat-val {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            color: var(--color-accent);
+            line-height: 1;
+        }
+
+        .stat-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .stat-desc {
+            font-size: 0.875rem;
+            color: var(--color-text-muted);
+            margin-top: 0.5rem;
+        }
+
+        /* About / Approach */
+        .approach {
+            padding-top: 0; /* Adjust for stats overlap */
+        }
+
+        .approach-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .approach-image {
+            position: relative;
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+        }
+        
+        .approach-image::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: var(--radius-lg);
+            pointer-events: none;
+        }
+
+        .approach-feature {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--color-bg-alt);
+            border-radius: 50%;
+            color: var(--color-accent);
+            flex-shrink: 0;
+        }
+        
+        .feature-icon svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        .feature-title {
+            font-size: 1.25rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-primary);
+        }
+
+        /* Services */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .service-card {
+            background-color: var(--color-white);
+            border-radius: var(--radius-md);
+            padding: 2.5rem 2rem;
+            transition: var(--transition-smooth);
+            border: 1px solid rgba(0,0,0,0.03);
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-md);
+            border-color: rgba(212, 175, 55, 0.2);
+        }
+
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--color-primary);
+            margin-bottom: 1.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .service-card:hover .service-icon {
+            color: var(--color-accent);
+            transform: scale(1.1);
+        }
+
+        .service-title {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .service-desc {
+            color: var(--color-text-muted);
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+
+        .service-link {
+            font-weight: 600;
+            color: var(--color-primary);
+            text-transform: uppercase;
+            font-size: 0.875rem;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: var(--transition-smooth);
+        }
+
+        .service-link::after {
+            content: '→';
+            transition: transform 0.3s ease;
+        }
+
+        .service-link:hover {
+            color: var(--color-accent);
+        }
+
+        .service-link:hover::after {
+            transform: translateX(5px);
+        }
+
+        /* Doctors */
+        .doctors {
+            background-color: var(--color-primary);
+            color: var(--color-white);
+        }
+        
+        .doctors .section-title,
+        .doctors .section-subtitle {
+            color: var(--color-white);
+        }
+        
+        .doctors .section-subtitle {
+            opacity: 0.8;
+        }
+
+        .doctors-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+        }
+
+        .doctor-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: var(--radius-lg);
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+
+        .doctor-img {
+            width: 40%;
+            height: 100%;
+            object-fit: cover;
+            min-height: 300px;
+        }
+
+        .doctor-info {
+            padding: 2.5rem;
+            width: 60%;
+        }
+
+        .doctor-name {
+            font-size: 1.75rem;
+            color: var(--color-white);
+            margin-bottom: 0.5rem;
+        }
+
+        .doctor-spec {
+            color: var(--color-accent);
+            font-size: 0.875rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .doctor-desc {
+            font-size: 0.95rem;
+            opacity: 0.8;
+            margin-bottom: 1.5rem;
+        }
+
+        /* FAQ */
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+            padding: 1.5rem 0;
+            cursor: pointer;
+        }
+
+        .faq-question {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--color-primary);
+            transition: var(--transition-smooth);
+        }
+        
+        .faq-item:hover .faq-question {
+            color: var(--color-accent);
+        }
+
+        .faq-icon {
+            position: relative;
+            width: 20px;
+            height: 20px;
+        }
+
+        .faq-icon::before, .faq-icon::after {
+            content: '';
+            position: absolute;
+            background-color: var(--color-accent);
+            transition: var(--transition-smooth);
+        }
+
+        .faq-icon::before {
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            transform: translateY(-50%);
+        }
+
+        .faq-icon::after {
+            top: 0;
+            left: 50%;
+            width: 2px;
+            height: 100%;
+            transform: translateX(-50%);
+        }
+
+        .faq-item.active .faq-icon::after {
+            transform: translateX(-50%) rotate(90deg);
+            opacity: 0;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+            color: var(--color-text-muted);
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            margin-top: 1rem;
+            /* Max height is handled by JS for smooth animation */
+        }
+
+        /* CTA Section */
+        .cta-section {
+            position: relative;
+            padding: 6rem 0;
+            text-align: center;
+            background: linear-gradient(135deg, var(--color-bg-alt) 0%, #E8EDF2 100%);
+            overflow: hidden;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .cta-phone {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            color: var(--color-primary);
+            display: block;
+            margin: 2rem 0;
+            text-decoration: none;
+            transition: var(--transition-smooth);
+        }
+        
+        .cta-phone:hover {
+            color: var(--color-accent);
+        }
+        
+        .phones-wrapper {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: var(--color-text-main);
+            color: rgba(255,255,255,0.7);
+            padding: 4rem 0 2rem;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+        
+        .footer-logo {
+            font-family: var(--font-heading);
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--color-white);
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .footer-logo span { color: var(--color-accent); }
+
+        .footer-title {
+            color: var(--color-white);
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+
+        .footer-links a {
+            transition: var(--transition-smooth);
+        }
+
+        .footer-links a:hover {
+            color: var(--color-accent);
+        }
+
+        .footer-bottom {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.875rem;
+        }
+
+        /* Float Button */
+        .float-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            width: 60px;
+            height: 60px;
+            background-color: var(--color-accent);
+            color: var(--color-white);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 25px rgba(212, 175, 55, 0.4);
+            z-index: 999;
+            transition: var(--transition-smooth);
+            animation: pulse-ring 2s infinite;
+        }
+
+        .float-btn:hover {
+            transform: scale(1.1);
+            background-color: var(--color-primary);
+            box-shadow: 0 10px 25px rgba(10, 77, 104, 0.4);
+        }
+        
+        .float-btn svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        @keyframes pulse-ring {
+            0% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(212, 175, 55, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(212, 175, 55, 0); }
+        }
+
+        /* Animations via JS (IntersectionObserver) */
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s cubic-bezier(0.5, 0, 0, 1);
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 1024px) {
+            .stats {
+                padding: 2rem;
+                gap: 1.5rem;
+            }
+            .approach-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .approach-image {
+                height: 400px;
+            }
+            .services-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .doctors-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .section { padding: 3rem 0; }
+            .header-phone { display: none !important; }
+            .header.scrolled { padding: 1rem 0; }
+            
+            .burger {
+                display: block;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--color-primary);
+                flex-direction: column;
+                justify-content: center;
+                transition: 0.4s ease;
+                z-index: 1000;
+            }
+            
+            .nav-menu.active {
+                right: 0;
+            }
+            
+            .nav-link {
+                color: var(--color-white) !important;
+                font-size: 1.5rem;
+            }
+            
+            .hero-title { font-size: 2.5rem; }
+            .hero-buttons { flex-direction: column; width: 100%; }
+            .btn { width: 100%; }
+            
+            .stats {
+                transform: none;
+                margin-top: 2rem;
+                grid-template-columns: 1fr;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .approach { padding-top: 3rem; }
+            
+            .doctor-card {
+                flex-direction: column;
+            }
+            .doctor-img {
+                width: 100%;
+                height: 300px;
+            }
+            .doctor-info {
+                width: 100%;
+                padding: 1.5rem;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            .footer-bottom {
+                flex-direction: column;
+                text-align: center;
+                gap: 1rem;
+                padding-bottom: 2rem;
+            }
+            
+            .cta-phone {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container nav-container">
+            <a href="#" class="logo">All<span>Dent</span></a>
+            
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#about" class="nav-link">О нас</a>
+                <a href="#services" class="nav-link">Услуги</a>
+                <a href="#doctors" class="nav-link">Врачи</a>
+                <a href="#faq" class="nav-link">Частые вопросы</a>
+                <a href="#contacts" class="nav-link">Контакты</a>
+            </nav>
+            
+            <div class="nav-actions">
+                <a href="tel:+375296920312" class="header-phone">+375 29 692-03-12</a>
+                <a href="#contacts" class="btn btn-outline">Онлайн запись</a>
+                <div class="burger" id="burger">
+                    <div class="burger-line"></div>
+                    <div class="burger-line"></div>
+                    <div class="burger-line"></div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Hero Section -->
+        <section class="hero">
+            <img src="https://images.unsplash.com/photo-1606811841689-23dfddce3e95?q=80&w=2070&auto=format&fit=crop" alt="Интерьер премиальной стоматологии" class="hero-bg">
+            <div class="hero-overlay"></div>
+            <div class="container hero-content">
+                <span class="hero-tag reveal">Стоматология семьи Кашевич</span>
+                <h1 class="hero-title reveal" style="transition-delay: 0.1s;">Искусство здоровой улыбки. Безупречно и навсегда.</h1>
+                <p class="hero-desc reveal" style="transition-delay: 0.2s;">Мы доказали, что стоматология может быть безболезненной, безопасной и эстетичной. Комплексное лечение и эстетическая реставрация с гарантиями от практикующих экспертов с 23-летним опытом.</p>
+                <div class="hero-buttons reveal" style="transition-delay: 0.3s;">
+                    <a href="#contacts" class="btn btn-accent">Записаться на прием</a>
+                    <a href="#services" class="btn btn-outline">Наши услуги</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Stats -->
+        <section class="stats-wrapper container">
+            <div class="stats reveal">
+                <div class="stat-item">
+                    <span class="stat-val">23</span>
+                    <span class="stat-label">Года практики</span>
+                    <span class="stat-desc">Безупречная репутация и тысячи довольных пациентов.</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-val">100%</span>
+                    <span class="stat-label">Стерильность</span>
+                    <span class="stat-desc">Одноразовые эндодонтические файлы системы WaveOne.</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-val">0</span>
+                    <span class="stat-label">Страха и боли</span>
+                    <span class="stat-desc">Современные анестетики и психологический комфорт.</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Approach / About -->
+        <section class="section approach" id="about">
+            <div class="container">
+                <div class="approach-grid">
+                    <div class="approach-text reveal">
+                        <h2 class="section-title">Мы лечим людей,<br>а не только зубы</h2>
+                        <p class="section-subtitle" style="margin-left:0;">Выбор стоматолога — это вопрос доверия. Мы создали клинику, в которую приходят поколениями, потому что на первое место ставим качество жизни нашего пациента.</p>
+                        
+                        <div class="approach-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                            </div>
+                            <div>
+                                <h3 class="feature-title">Бескомпромиссная безопасность</h3>
+                                <p class="text-muted">Отсутствует риск перекрестной контаминации. Мы используем передовую систему WaveOne: один пациент = один индивидуальный инструмент.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="approach-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            </div>
+                            <div>
+                                <h3 class="feature-title">Экономия вашего времени</h3>
+                                <p class="text-muted">Точная диагностика и грамотно составленный план лечения сокращают количество визитов. Делаем быстро, но без ущерба качеству.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="approach-feature">
+                            <div class="feature-icon">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                            </div>
+                            <div>
+                                <h3 class="feature-title">Максимальное сохранение зуба</h3>
+                                <p class="text-muted">Мы ценим родные зубы. Там, где другие предлагают удаление, мы боремся за здоровье корня с помощью современной эндодонтии.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="approach-image reveal" style="transition-delay: 0.2s;">
+                        <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?q=80&w=2070&auto=format&fit=crop" alt="Врач стоматологии AllDent за работой">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services -->
+        <section class="section section-light" id="services">
+            <div class="container">
+                <div class="text-center reveal">
+                    <span class="hero-tag">Наши направления</span>
+                    <h2 class="section-title">Золотой стандарт услуг</h2>
+                    <p class="section-subtitle">От профессиональной гигиены до сложного протезирования. Мы возвращаем не просто жевательную функцию, но и уверенность в себе.</p>
+                </div>
+                
+                <div class="services-grid">
+                    <!-- Service 1 -->
+                    <div class="service-card reveal" style="transition-delay: 0.1s;">
+                        <div class="service-icon">✦</div>
+                        <h3 class="service-title">Эстетическая реставрация</h3>
+                        <p class="service-desc">Виниры, компониры, безметалловая керамика и отбеливание. Создаем идеальную форму и цвет, сохраняя естественность улыбки.</p>
+                        <a href="#contacts" class="service-link">Записаться</a>
+                    </div>
+                    
+                    <!-- Service 2 -->
+                    <div class="service-card reveal" style="transition-delay: 0.2s;">
+                        <div class="service-icon">⛨</div>
+                        <h3 class="service-title">Лечение зубов</h3>
+                        <p class="service-desc">Лечение кариеса, пульпита и периодонтита под контролем оптики. Лечение околозубных кист. Безболезненно и с гарантией.</p>
+                        <a href="#contacts" class="service-link">Консультация</a>
+                    </div>
+                    
+                    <!-- Service 3 -->
+                    <div class="service-card reveal" style="transition-delay: 0.3s;">
+                        <div class="service-icon">⚙</div>
+                        <h3 class="service-title">Протезирование</h3>
+                        <p class="service-desc">Анатомическое восстановление отдельных зубов и целостности зубных рядов. Комфорт при жевании, долговечность и эстетика.</p>
+                        <a href="#contacts" class="service-link">Узнать подробнее</a>
+                    </div>
+                    
+                    <!-- Service 4 -->
+                    <div class="service-card reveal" style="transition-delay: 0.4s;">
+                        <div class="service-icon">✧</div>
+                        <h3 class="service-title">Профилактика</h3>
+                        <p class="service-desc">Комплексная чистка зубов, ультразвук, обучение гигиене, реминерализация и фторирование. Предупреждаем проблемы до их появления.</p>
+                        <a href="#contacts" class="service-link">Записаться на чистку</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Doctors -->
+        <section class="section doctors" id="doctors">
+            <div class="container">
+                <div class="text-center reveal">
+                    <span class="hero-tag" style="color:var(--color-bg-alt);">Лица клиники</span>
+                    <h2 class="section-title">Семья Кашевич</h2>
+                    <p class="section-subtitle">Ваше здоровье в надежных руках профессионалов, для которых стоматология — это не просто работа, а призвание всей жизни.</p>
+                </div>
+                
+                <div class="doctors-grid">
+                    <div class="doctor-card reveal" style="transition-delay: 0.1s;">
+                        <img src="https://images.unsplash.com/photo-1622253692010-333f2da6031d?q=80&w=1964&auto=format&fit=crop" alt="Андрей Михайлович" class="doctor-img">
+                        <div class="doctor-info">
+                            <h4 class="doctor-name">Андрей Михайлович</h4>
+                            <p class="doctor-spec">Стоматолог-ортопед, терапевт</p>
+                            <p class="doctor-desc">Виртуоз сложных случаев и точного протезирования. Более 20 лет возвращает пациентам функциональность и уверенность при улыбке. Специалист по безметалловой керамике.</p>
+                            <div class="text-accent" style="font-size:0.875rem;">Опыт работы: 23+ года</div>
+                        </div>
+                    </div>
+                    
+                    <div class="doctor-card reveal" style="transition-delay: 0.2s;">
+                        <img src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?q=80&w=2070&auto=format&fit=crop" alt="Инесса Сергеевна" class="doctor-img">
+                        <div class="doctor-info">
+                            <h4 class="doctor-name">Инесса Сергеевна</h4>
+                            <p class="doctor-spec">Стоматолог-терапевт, эндодонтист</p>
+                            <p class="doctor-desc">Мастер эстетической реставрации композитными материалами и эндодонтического лечения (спасение «безнадежных» зубов). Отличается исключительной чуткостью и аккуратностью.</p>
+                            <div class="text-accent" style="font-size:0.875rem;">Опыт работы: 23+ года</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section" id="faq">
+            <div class="container">
+                <div class="text-center reveal">
+                    <span class="hero-tag">Отвечаем на вопросы</span>
+                    <h2 class="section-title">Важно знать</h2>
+                </div>
+                
+                <div class="faq-container reveal" style="transition-delay: 0.2s;">
+                    <div class="faq-item">
+                        <div class="faq-question">Это больно? <div class="faq-icon"></div></div>
+                        <div class="faq-answer">
+                            Мы используем современные анестетики (ультракаин, септанест), которые полностью блокируют болевые ощущения. Сам укол проводится предельно аккуратно, Вы почувствуете лишь легкий, секундный дискомфорт.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Что такое лечение с системой WaveOne? <div class="faq-icon"></div></div>
+                        <div class="faq-answer">
+                            WaveOne — это премиальная система одноразовых никель-титановых файлов для лечения корневых каналов. Она исключает перелом инструмента в канале, сокращает время лечения и гарантирует 100% стерильность, так как файл используется только для одного пациента и утилизируется.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Даете ли вы гарантию на пломбы и коронки? <div class="faq-icon"></div></div>
+                        <div class="faq-answer">
+                            Безусловно. Мы работаем только с сертифицированными материалами премиум-класса из Европы и США, поэтому предоставляем официальную гарантию на все виды терапевтических и ортопедических работ согласно законодательству РБ.
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question">Как часто нужно делать профессиональную чистку? <div class="faq-icon"></div></div>
+                        <div class="faq-answer">
+                            По международным стандартам — раз в 6 месяцев. Пациентам с брекетами, имплантами или склонностью к быстрому образованию зубного камня мы рекомендуем проводить гигиену раз в 3-4 месяца. Это лучшая защита от кариеса.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section" id="contacts">
+            <div class="container cta-content reveal">
+                <h2 class="section-title" style="color:var(--color-primary);">Готовы изменить свою улыбку?</h2>
+                <p class="section-subtitle">Свяжитесь с нами сегодня. Мы подберем удобное время, проведем полную диагностику и составим прозрачный план лечения.</p>
+                
+                <div class="phones-wrapper">
+                    <div>
+                        <span class="text-muted" style="text-transform:uppercase; font-size:0.8rem; letter-spacing:1px; display:block;">Андрей Михайлович:</span>
+                        <a href="tel:+375296698523" class="cta-phone">+375 29 669-85-23</a>
+                    </div>
+                    <div>
+                        <span class="text-muted" style="text-transform:uppercase; font-size:0.8rem; letter-spacing:1px; display:block;">Инесса Сергеевна:</span>
+                        <a href="tel:+375296920312" class="cta-phone">+375 29 692-03-12</a>
+                    </div>
+                </div>
+                
+                <a href="tel:+375172135012" class="btn btn-primary" style="margin-top:1rem;">Позвонить в клинику: +375 17 213-50-12</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <a href="#" class="footer-logo">All<span>Dent</span></a>
+                    <p style="margin-bottom: 2rem; max-width:300px;">Премиальная стоматология семьи Кашевич. Безупречное лечение, основанное на опыте и инновациях.</p>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Адрес</h4>
+                    <p>г. Минск, Республика Беларусь<br>ул. К. Либкнехта, 68</p>
+                </div>
+                
+                <div>
+                    <h4 class="footer-title">Навигация</h4>
+                    <ul class="footer-links">
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#services">Услуги</a></li>
+                        <li><a href="#doctors">Врачи</a></li>
+                        <li><a href="#faq">Вопросы</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026 Стоматология AllDent. Все права защищены.</p>
+                <div style="display:flex; gap:1rem;">
+                    <a href="#">Политика конфиденциальности</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Mobile Float Button -->
+    <a href="tel:+375296920312" class="float-btn" aria-label="Позвонить нам">
+        <svg viewBox="0 0 24 24">
+            <path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56M15.78 14.36a1 1 0 0 1 .28 1.15l1.65 3.01a18.91 18.91 0 0 1-8.5-8.5l3.01 1.65a1 1 0 0 1 1.15.28M15.78 14.36c.4.4.4 1.05 0 1.45l-2.02 2.02a18.92 18.92 0 0 1-8.49-8.49l2.02-2.02c.4-.4 1.05-.4 1.45 0l2.71 2.71c.21.21.32.48.33.77-.02.3-.14.58-.35.79l-.82.82" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+    </a>
+
+    <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Header Scroll Effect
+            const header = document.getElementById('header');
+            
+            const handleScroll = () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            };
+            
+            window.addEventListener('scroll', handleScroll);
+            handleScroll(); // init
+
+            // Mobile Menu
+            const burger = document.getElementById('burger');
+            const navMenu = document.getElementById('nav-menu');
+            const navLinks = document.querySelectorAll('.nav-link');
+            
+            burger.addEventListener('click', () => {
+                const isActive = navMenu.classList.contains('active');
+                
+                if (isActive) {
+                    navMenu.classList.remove('active');
+                    burger.innerHTML = '<div class="burger-line"></div><div class="burger-line"></div><div class="burger-line"></div>';
+                } else {
+                    navMenu.classList.add('active');
+                    burger.innerHTML = '<div style="color:white; font-size:2rem; line-height:1;">&times;</div>';
+                }
+            });
+
+            // Close menu on link click
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    navMenu.classList.remove('active');
+                    burger.innerHTML = '<div class="burger-line"></div><div class="burger-line"></div><div class="burger-line"></div>';
+                });
+            });
+
+            // FAQ Accordion
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                
+                question.addEventListener('click', () => {
+                    const isActive = item.classList.contains('active');
+                    
+                    // Close all others
+                    faqItems.forEach(otherItem => {
+                        otherItem.classList.remove('active');
+                        otherItem.querySelector('.faq-answer').style.maxHeight = null;
+                    });
+                    
+                    if (!isActive) {
+                        item.classList.add('active');
+                        answer.style.maxHeight = answer.scrollHeight + 20 + "px"; // +20 for smooth margin
+                    }
+                });
+            });
+
+            // Intersection Observer for scroll animations
+            const observeElements = document.querySelectorAll('.reveal');
+            
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+            
+            observeElements.forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>
